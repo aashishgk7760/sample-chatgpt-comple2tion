@@ -1,0 +1,34 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resource Recommender</h1>
+        <form action="/recommend" method="post">
+            <div class="form-group">
+                <label for="cloud_provider">Cloud Service Provider:</label>
+                <select id="cloud_provider" name="cloud_provider" class="input-text">
+                    <option value="aws">AWS</option>
+                    <option value="azure">Azure</option>
+                    <option value="gcp">Google Cloud</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="experience">Years of Experience:</label>
+                <input type="number" id="experience" name="experience" class="input-text">
+            </div>
+            <div class="form-group">
+                <label for="interest">Field of Interest:</label>
+                <input type="text" id="interest" name="interest" class="input-text">
+            </div>
+            <button type="submit" class="btn">Get Recommendations</button>
+        </form>
+    </div>
+</body>
+</html>
